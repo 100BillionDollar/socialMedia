@@ -625,7 +625,6 @@ textarea.form-control:focus{box-shadow:inherit!important; border: 1px solid #ccc
   left: 0;
 }
 .story-item.add-story:after{display:none;}
-
 .post-modal {
   position: fixed;
   top: 0;
@@ -677,7 +676,6 @@ body .stories-slider .swiper-button-next, body .stories-slider .swiper-button-pr
   display: flex;
   flex-direction: column;
 }
-
 .modal-actions {
   display: flex;
   align-items: center;
@@ -753,4 +751,90 @@ body .stories-slider .swiper-button-next, body .stories-slider .swiper-button-pr
     width: 90px;
     height: 130px;
   }
+}
+.search_icon_btn{background-color: #dc3545!important}
+.after_border{position: relative;}
+.after_border::after{rotate: 0;
+  position: absolute;
+  content: '';
+  height: 70%;
+  width: 2px;
+  border:1px dashed #9d9b9b;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);}
+  .cat_card_container .text_container{    top: 22px;
+    bottom: inherit;
+    left: 7px;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    
+  }
+  .cat_card_container{cursor: pointer;}
+  .cat_card_container img{
+    color: transparent;
+    right: -76px;
+    bottom:0;
+    transform: scale(1);
+    transition:   0.7s all;
+  }
+  .cat_card_container  *{transition: 0.7s all;}
+  .cat_card_container .explore_txt{transform: translateX(-150%);}
+  .cat_card_container label{   transform: scale(1);left: -32%;
+    transition:  1s all;}
+  .cat_card_container:hover label{transform: scale(1.05);}
+  .cat_card_container:hover img{transform: scale(1.05);}
+  .cat_card_container:hover .explore_icon{right: 53%;background-color: #fff!important;}
+  .cat_card_container:hover .explore_txt{transform: translateX(0);color:#000}
+  .cat_card_container:hover svg{fill:#000}
+
+
+   .realestate img{right:-100px;bottom:-27px}
+.electronics img{right: -47px;}
+.fashion img{right: 0;}
+.food img{right: -98px;bottom: -46px;}
+  .cat_card_container .text_container p{color:#fff;font-size: 12px;}
+  .business_card_item{box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;}
+  .content_container small{
+
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: normal;}
+
+    .content_container button{border: none;padding: 10px 28px;border-radius: 0;}
+    .content_container button.blue_btn{background-color: #5176c6;color:#fff;border-radius: 0;margin: 0 8px;}
+    
+    .content_container    .first_btn{border-top-left-radius: 8px;border-bottom-left-radius: 8px;}
+    .content_container    .second_btn{border-top-right-radius: 8px;border-bottom-right-radius: 8px;}
+    .content_container .review_cnt{padding: 4px;}
+    .content_container .review_cnt .badge{    border-radius: 4px;
+      padding: 6px 16px;
+      font-size: 12px;
+      color: #909090 !important;
+      font-weight: 100;
+      margin-left: 8px;}
+      .review_txt{    font-size: 16px;
+        font-weight: 100;
+        gap: 2px;}
+        .timing_label{font-size: 12px;}
+   .card_img{right: -52px;}
+   .explore_icon{
+    bottom: 33px;
+    background: #fff;
+    padding: 4px 13px;
+
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.16);
+    font-size: 15px;
+    right: 82%;
+    transition: right 1s all;
+   }
+   .buy_requirment_section  input{font-size: 16px;}
+
+   button.btn.btn-danger{
+    background: #e5484d!important;
+   border: none!important;
 }

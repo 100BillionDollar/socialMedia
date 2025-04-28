@@ -1,4 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Header from "./component/header";
+import 'bootstrap/dist/css/bootstrap.css';
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "./component/header";
 import 'bootstrap/dist/css/bootstrap.css'
@@ -12,6 +15,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+const open_Sans = Open_Sans({
+  variable: "--font-open-Sans ",
+  subsets: ["latin"],
+});
+
+
 
 export const metadata = {
   title: "Create Next App",
