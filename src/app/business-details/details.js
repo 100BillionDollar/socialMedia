@@ -7,7 +7,7 @@ import { faStar, faLocationDot, faPhone, faShareNodes, faAngleRight } from '@for
 
 export default function Home() {  
   return (
-    <>
+    <> 
       <Head>
         <title>Arthros Multispeciality Hospital</title>
         <meta name="description" content="Arthros Multispeciality Hospital in Indore" />
