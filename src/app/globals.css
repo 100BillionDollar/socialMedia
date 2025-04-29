@@ -1,13 +1,80 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'FacebookSansRegular'!important;
   background-color: #f8f9fa;
   font-size: 0.9rem;
 
 }
 
+@font-face {
+  font-family: 'FacebookSansRegular';
+  src: url('/assets/fonts/FacebookSansRegular.ttf') format('truetype');
+  font-weight: normal;  /* Optional: set if needed */
+  font-style: normal;   /* Optional: set if needed */
+}
+
+.svg-inline--fa{height:18px;}
+input::placeholder {
+  color: #aaa; 
+  font-weight: 100;
+}
 .logo {
   height: 35px;
 }
+.form-check-input[type=checkbox]{background-color: #e9b9b9;border-radius: 0!important;border-color: #e5484d;}
+.form-check label{color: #666;font-weight: 100;}
+body .form-check-input:checked{background-color: #e5484d!important;border-color: #e5484d!important;}
+.active{color: #e5484d;}
+.form-check-input:focus{box-shadow: none!important;}
+.business_card_item{box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;}
+.offer_text{background: linear-gradient(266deg, #426DB3, #8FA8D2, #FFFFFF);font-size: 16px;display: block;white-space: nowrap;
+  padding: 12px 21px;border-top-right-radius: 5px;display: flex;gap:4px;
+  margin-top: auto;
+  border-bottom-right-radius: 5px;}
+.f-12{font-size: 12px;}
+.btn:focus-visible{border: none;}
+button.common_btn{background-color: #e5484d!important;color:#fff!important}
+.card{box-shadow: rgb(60 64 67 / 14%) 0px 1px 2px 0px, rgb(18 88 141 / 0%) 0px 2px 6px 2px;}
+.card > .list-group:last-child{border: none;}
+.list-group{box-shadow: rgb(60 64 67 / 14%) 0px 1px 2px 0px, rgb(18 88 141 / 0%) 0px 2px 6px 2px;}
+.list-group-item{border: var(--bs-list-group-border-width) solid #dee2e63d;}
+.card{border:none;}
+.card-header{border:none}
+body .carousel-indicators [data-bs-target]{width: 8px;
+  height: 8px;background-color: #fff;border-radius: 50%;}
+  .carousel-indicators .active{background-color:#fff}
+  span{position: relative;}
+  .breadcrumb-item{position: relative;}
+  .breadcrumb-item a{color: #000;}
+  .breadcrumb-item + .breadcrumb-item::before{         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='8.771' viewBox='0 0 5 8.771'%3E%3Cpath data-name='Path 2010' d='m101.959 4.82-3.772 3.771a.614.614 0 1 1-.869-.869l3.337-3.337-3.337-3.337a.614.614 0 0 1 .869-.868l3.772 3.771a.614.614 0 0 1 0 .868z' transform='translate(-97.139)' style='fill:%23434d59'/%3E%3C/svg%3E");
+
+ background-repeat: no-repeat;
+background-position: center;
+content: '';
+display: block;
+width: 12px;
+height: 12px;
+position: absolute;
+left: -2px;
+top: 42%;
+transform: translate(-50%, -50%);
+
+}
+.breadcrumb-item.active span{color: #e74c3c;}
+  /* span.text-white.bg-success.px-3.py-1:after {
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 31px;
+    background: #f8f9fa;
+    transform: rotate(48deg);
+    left: 89px;
+    z-index: 1;
+    top: 47%;
+    transform: translateY(-50%) rotate(45deg);
+} */
+.carousel-indicators{    margin-bottom: 10px;}
+
+.breadcrumb span{position: relative;display: block;font-size: 12px;color: #717171;}
 
 .navbar {
   background-color: white;
@@ -33,6 +100,7 @@ body {
   border-radius: 8px;
   margin-bottom: 5px;
 }
+.dr_absolute{position: absolute;bottom: 0;height: 200px; width: auto\;}
 
 .sidebar-menu a:hover {
   background-color: #f0f2f5;
@@ -241,12 +309,20 @@ top: -35px;
   align-items: center;
   padding: 8px 0;
 }
+.feedTabs li.nav-item {
+  width: 50%;
+  transition: 0.3s;
+  border-right: 1px solid #DFD8D8;
+}
+.feedTabs li.nav-item:last-child{border-right:none;}
 .feedTabs {
-background: #fff;
-border: 1px solid #DFD8D8;
-border-radius: 7px 7px 0 0;
-border-bottom: 0;
-justify-content: space-around;
+  background: #fff;
+  border: 1px solid #DFD8D8;
+  border-radius: 8px 8px 0 0;
+  justify-content: space-around;
+}
+.feedTabs li.nav-item:hover {
+  background:#f0f2f5;
 }
 .upload_icon {
   font-size: .9375rem;
@@ -331,7 +407,9 @@ margin-right: 10px;
   border: none;
   color: #666;
   font-weight: 500;
-  padding: 12px 15px;
+  padding: 14px 15px;
+  display: table;
+  margin: auto;
 }
 .stories_logo {
   left: 10px;
@@ -367,7 +445,7 @@ margin-right: 10px;
 .add-icon path {
   fill: #e74c3c;
 }
-.form-control:focus{box-shadow: inherit; outline: none;}
+.form-control:focus{box-shadow: inherit; outline: none;border-color: rgb(231, 76, 60);}
 .search-bar {
   position: relative;
 }
@@ -625,6 +703,7 @@ textarea.form-control:focus{box-shadow:inherit!important; border: 1px solid #ccc
   left: 0;
 }
 .story-item.add-story:after{display:none;}
+body .card-header{background-color: #5176c6;color:#fff;font-weight: 100;}
 .post-modal {
   position: fixed;
   top: 0;
@@ -707,6 +786,73 @@ body .stories-slider .swiper-button-next, body .stories-slider .swiper-button-pr
   color: var(--bs-secondary-color) !important;
 }
 .comment_reply:hover{color:#426db3;}
+
+
+
+
+
+.pageTitle {
+  text-align: center;
+  color: #000;
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.religionGrid {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.religionCard {
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  height: 160px;
+  width: 160px;
+  position: relative;
+  margin: 15px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.religionCard:hover {
+  transform: translateY(-5px);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cardLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.inner_banner_section{background-size: cover!important;
+  background-repeat: no-repeat!important;}
+
+  button.btn.btn-white.border-0.rounded-end.px-3.search_icon_btn {
+    background: #fff;
+}
+
+.buy_requirment_section{
+  background: #ffc0cb75;
+}
+.app_section {
+  background: #fff;
+}
 
 @media (max-width: 767.98px) {
   .sidebar {

@@ -199,7 +199,7 @@ export default function Listing() {
               <div className="carousel-inner">
                 <div className={`carousel-item ${bannerIndex === 0 ? 'active' : ''}`}>
                   <div className="text-center">
-                  <img
+                  <Image
                       src="/assets/images/healthcare_three.jpg"
                       width={1200}
                       height={400}
@@ -211,7 +211,7 @@ export default function Listing() {
                 </div>
                 <div className={`carousel-item ${bannerIndex === 1 ? 'active' : ''}`}>
                   <div className="bg-light text-center  rounded">
-                  <img
+                  <Image
                       src="/assets/images/healthcare_two.jpg"
                       width={1200}
                       height={400}
@@ -222,7 +222,7 @@ export default function Listing() {
                 </div>
                 <div className={`carousel-item ${bannerIndex === 2 ? 'active' : ''}`}>
                   <div className="bg-light text-center  rounded">
-                  <img
+                  <Image
                       src="/assets/images/healthcare_one.jpg"
                       width={1200}
                       height={400}
@@ -357,7 +357,7 @@ export default function Listing() {
           </div>
         </div>
       </div>
-      {/* <img src={"/assets/images/doctor_png.png"} className='position-absolute dr_absolute bottom-0' alt='doctor image' width={"200"} height={"600"}/> */}
+      {/* <Image src={"/assets/images/doctor_png.png"} className='position-absolute dr_absolute bottom-0' alt='doctor image' width={"200"} height={"600"}/> */}
    
     </>
   );

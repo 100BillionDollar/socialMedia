@@ -77,7 +77,7 @@ export default function Home() {
                   onClick={() => handleReligionSelect(religion.id)}
                 >
                   <div className="position-relative w-100 h-100">
-                    <img
+                    <Image
                       src={religion.image}
                       alt={religion.name}
                       fill
@@ -102,7 +102,7 @@ export default function Home() {
                   onClick={() => handleReligionSelect(religion.id)}
                 >
                   <div className="position-relative w-100 h-100">
-                    <img
+                    <Image
                       src={religion.image}
                       alt={religion.name}
                       fill

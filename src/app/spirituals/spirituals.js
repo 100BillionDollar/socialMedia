@@ -86,7 +86,7 @@ export default function Home() {
             </div>
             <div className="col-md-5">
               <div className="text-center">
-                <img 
+                <Image 
                   src="/om-symbol.png" 
                   alt="Om Symbol with Sanskrit Mantras" 
                   width={320} 
@@ -124,7 +124,7 @@ export default function Home() {
               <div className="card h-100 border-0 bg-light">
                 <div className="card-body text-center">
                   <div className="mb-3" style={{height: "180px"}}>
-                    <img 
+                    <Image 
                       src="/aarti-thali.png" 
                       alt="Aarti Thali" 
                       width={250} 
@@ -140,7 +140,7 @@ export default function Home() {
               <div className="card h-100 border-0 bg-light">
                 <div className="card-body text-center">
                   <div className="mb-3" style={{height: "180px"}}>
-                    <img 
+                    <Image 
                       src="/sacred-book.png" 
                       alt="Sacred Book" 
                       width={250} 
@@ -238,7 +238,7 @@ export default function Home() {
     <div className="col-md-6 mb-3 mb-md-0">
       <div className="card rounded-3 border-0 overflow-hidden">
         <div className="card-img position-relative">
-          <img 
+          <Image 
             src="/appointment-bg.jpg" 
             alt="Appointment Background" 
             width={600} 
@@ -263,7 +263,7 @@ export default function Home() {
     <div className="col-md-6">
       <div className="card rounded-3 border-0 overflow-hidden">
         <div className="card-img position-relative">
-          <img 
+          <Image 
             src="/appointment-bg.jpg" 
             alt="Appointment Background" 
             width={600} 
@@ -298,7 +298,7 @@ export default function Home() {
     <div className="col-md-4 mb-3">
       <div className="card border-0 overflow-hidden rounded-3">
         <div className="position-relative">
-          <img 
+          <Image 
             src="/vishesh-puja.jpg" 
             alt="Guru Purnima Vishesh Puja" 
             width={400}
@@ -321,7 +321,7 @@ export default function Home() {
     <div className="col-md-4 mb-3">
       <div className="card border-0 overflow-hidden rounded-3">
         <div className="position-relative">
-          <img 
+          <Image 
             src="/vishesh-puja.jpg" 
             alt="Guru Purnima Vishesh Puja" 
             width={400}
@@ -344,7 +344,7 @@ export default function Home() {
     <div className="col-md-4 mb-3">
       <div className="card border-0 overflow-hidden rounded-3">
         <div className="position-relative">
-          <img 
+          <Image 
             src="/vishesh-puja.jpg" 
             alt="Guru Purnima Vishesh Puja" 
             width={400}
@@ -440,7 +440,7 @@ export default function Home() {
     <div className="row align-items-center">
       <div className="col-md-3 text-center mb-4 mb-md-0">
         <div className="position-relative" style={{marginTop: '-60px'}}>
-          <img 
+          <Image 
             src="/app-screen.png" 
             alt="App Screenshot" 
             width={200} 

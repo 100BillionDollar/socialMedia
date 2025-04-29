@@ -5,9 +5,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faLocationDot, faPhone, faShareNodes, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
-export default function Home() {  
+export default function Home() {
   return (
-    <> 
+    <>
       <Head>
         <title>Arthros Multispeciality Hospital</title>
         <meta name="description" content="Arthros Multispeciality Hospital in Indore" />

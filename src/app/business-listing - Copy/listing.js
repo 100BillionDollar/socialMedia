@@ -197,7 +197,7 @@ export default function Home() {
               <div className="carousel-inner">
                 <div className={`carousel-item ${bannerIndex === 0 ? 'active' : ''}`}>
                   <div className="text-center">
-                      <img
+                      <Image
                       src="/assets/images/banner_cart.jpg"
                       width={300}
                       height={300}
@@ -208,7 +208,7 @@ export default function Home() {
                 </div>
                 <div className={`carousel-item ${bannerIndex === 1 ? 'active' : ''}`}>
                   <div className="bg-light text-center p-5 rounded">
-                  <img
+                  <Image
                       src="/assets/images/banner_cart.jpg"
                       width={300}
                       height={300}
@@ -219,7 +219,7 @@ export default function Home() {
                 </div>
                 <div className={`carousel-item ${bannerIndex === 2 ? 'active' : ''}`}>
                   <div className="bg-light text-center p-5 rounded">
-                  <img
+                  <Image
                       src="/assets/images/banner_cart.jpg"
                       width={300}
                       height={300}

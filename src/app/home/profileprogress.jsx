@@ -16,15 +16,15 @@ export default function ProfileProgress() {
     
     <div className="profile-completion-list">
       <a href="#" className="d-flex align-items-center">
-          <img src="/assets/images/update.svg" className="me-2" alt="Happening Feeds"   width={15}
+          <Image src="/assets/images/update.svg" className="me-2" alt="Happening Feeds"   width={15}
                     height={15}/> Update Your Profile
       </a>
       <a href="#" className="d-flex align-items-center">
-          <img src="/assets/images/update.svg" className="me-2" alt="Happening Feeds"   width={15}
+          <Image src="/assets/images/update.svg" className="me-2" alt="Happening Feeds"   width={15}
                     height={15}/> Your Date of Birth
       </a>
       <a href="#" className="d-flex align-items-center">
-         <img src="/assets/images/update.svg" className="me-2" alt="Happening Feeds"   width={15}
+         <Image src="/assets/images/update.svg" className="me-2" alt="Happening Feeds"   width={15}
                    height={15}/> Your Address
       </a>
     </div>
