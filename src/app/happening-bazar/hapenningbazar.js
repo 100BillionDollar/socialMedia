@@ -146,7 +146,7 @@ export default function HappeningBazaar() {
           {categories.map((category, index) => (
             <div key={index} className="col-6 col-md-4 col-lg-2" >
               <div className={`position-relative cat_card_container rounded-3 overflow-hidden border ${index==1?'realestate':index==2?'electronics':index==3?'fashion':index==4?'food':index==5?'services':''}`} style={{ height: '250px' ,background:category.bgColor}}>
-                <Image
+                <img
                   src={category.image}
                   width={300}
                   height={300}
@@ -180,7 +180,7 @@ export default function HappeningBazaar() {
             {categories.map((category, index) => (
             <div key={index} className="col-6 col-md-4 col-lg-2" >
               <div className={`position-relative cat_card_container rounded-3 overflow-hidden border ${index==1?'realestate':index==2?'electronics':index==3?'fashion':index==4?'food':index==5?'services':''}`} style={{ height: '250px' ,background:category.bgColor}}>
-                <Image
+                <img
                   src={category.image}
                   width={300}
                   height={300}
@@ -218,7 +218,7 @@ export default function HappeningBazaar() {
                   <div className="row g-3">
                     <div className="col-md-6">
                       <div className="bg-light border rounded overflow-hidden">
-                        <Image
+                        <img
                           src="/assets/images/slider_banner_one.jpg"
                           width={600}
                           height={300}
@@ -230,7 +230,7 @@ export default function HappeningBazaar() {
                     </div>
                     <div className="col-md-6">
                       <div className="bg-light border rounded overflow-hidden">
-                        <Image
+                        <img
                           src="/assets/images/slider_banner_two.jpg"
                           width={600}
                           height={300}
@@ -246,7 +246,7 @@ export default function HappeningBazaar() {
                   <div className="row g-3">
                     <div className="col-md-6">
                       <div className="bg-light border rounded overflow-hidden">
-                        <Image
+                        <img
                           src="/assets/images/slider_banner_three.jpg"
                           width={600}
                           height={300}
@@ -258,7 +258,7 @@ export default function HappeningBazaar() {
                     </div>
                     <div className="col-md-6">
                       <div className="bg-light border rounded overflow-hidden">
-                        <Image
+                        <img
                           src="/assets/images/slider_banner_two.jpg"
                           width={600}
                           height={300}
@@ -286,7 +286,7 @@ export default function HappeningBazaar() {
           <div className="row align-items-center">
             <div className="col-md-5 text-center">
               <div className="position-relative" style={{ maxWidth: '300px', margin: '0 auto' }}>
-                <Image 
+                <img 
                   src="/assets/images/phone_mockup.png" 
                   alt="App Screenshot" 
                   width={300}
@@ -368,7 +368,7 @@ export default function HappeningBazaar() {
             <div className="col-md-5 position-relative">
               <div className="rounded-circle position-relative" style={{ width: '320px', height: '320px', backgroundColor: '#FFE4E1', margin: '0 auto' }}>
                 <div className="position-absolute top-50 start-50 translate-middle">
-                  <Image 
+                  <img 
                     src="/assets/images/business_person.png" 
                     alt="Business Person" 
                     width={200} 
@@ -433,7 +433,7 @@ export default function HappeningBazaar() {
             {[1, 2, 3].map((item) => (
               <div key={item} className="col-md-4 mb-4">
                 <div className="card border-0 shadow-sm h-100">
-                  <Image 
+                  <img 
                     src="/assets/images/event_img1.jpg" 
                     alt="Blog" 
                     width={400} 

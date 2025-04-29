@@ -152,7 +152,7 @@ export default function FollowingTabs() {
         />
         <div className="d-flex align-items-center">
           <label htmlFor="imageUpload" className="upload_icon">
-            <Image
+            <img
             src="/assets/images/upload_icon.png"
             alt="upload image"
             width={24}

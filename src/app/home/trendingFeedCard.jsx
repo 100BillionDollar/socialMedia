@@ -24,7 +24,7 @@ const TrendingFeedCard = () => {
         {trendingTopics.map((topic, index) => (
           <div className="trending-item" key={index}>
             <div className="trending-icon">
-              <Image src={topic.icon} alt="icon" width={25} height={25} />
+              <img src={topic.icon} alt="icon" width={25} height={25} />
             </div>
             <div>
               <p className="mb-0 small">#{topic.hashtag}</p>

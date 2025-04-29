@@ -18,7 +18,7 @@ const EventCard = ({ event }) => {
         <div className="event-time">{event.dayOfWeek}, at {event.time}</div>
         
         <div className="event-location">
-        <Image
+        <img
             src="/assets/images/location.svg"
             width={16}
             height={16}

@@ -8,7 +8,7 @@ export default function Header() {
     <nav className="navbar navbar-expand-lg navbar-light sticky-top mb-3">
       <div className="container">
         <a className="navbar-brand" href="#">
-          <Image
+          <img
             src="/assets/images/logo.png"
             width={127}
             height={35}
@@ -55,7 +55,7 @@ export default function Header() {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <Image
+              <img
                 src="/assets/images/profile_icon.svg"
                 alt="Profile"
                 className="rounded-circle"
@@ -95,7 +95,7 @@ export default function Header() {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <div className="search-bar mx-auto mt-2 mt-lg-0 mb-2 mb-lg-0">
-          <span className="location_icon"><Image
+          <span className="location_icon"> <img
             src="/assets/images/location.svg"
             width={20}
             height={20}
