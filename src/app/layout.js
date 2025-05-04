@@ -1,7 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import Header from "./component/header";
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.css';
+import { Open_Sans } from "next/font/google";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,6 +13,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+const open_Sans = Open_Sans({
+  variable: "--font-open-Sans ",
+  subsets: ["latin"],
+});
+
+
 
 export const metadata = {
   title: "Create Next App",
@@ -21,9 +28,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    {/* <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/> */}
+    <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
 
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${open_Sans.variable}`}>
       <Header/>
         {children}
       </body>

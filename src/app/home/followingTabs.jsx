@@ -11,7 +11,8 @@ import {
   faEllipsisH,
   faHeart as faHeartSolid,
   faBookmark as faBookmarkSolid,
-  faImage
+  faImage,
+  faCheck
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faHeart,
@@ -25,12 +26,17 @@ export default function FollowingTabs() {
   const [newPostText, setNewPostText] = useState('');
   const [newPostImages, setNewPostImages] = useState([]);
   const [selectedPost, setSelectedPost] = useState(null);
+  const [showBookmarkConfirmation, setShowBookmarkConfirmation] = useState(false);
+  const [bookmarkedPostId, setBookmarkedPostId] = useState(null);
+  
   const openPostModal = (post) => {
     setSelectedPost(post);
   };
+  
   const closePostModal = () => {
     setSelectedPost(null);
   };
+  
   const [posts, setPosts] = useState([
     {
       id: 1,
@@ -81,6 +87,15 @@ export default function FollowingTabs() {
         post.id === postId ? { ...post, bookmarked: !post.bookmarked } : post
       )
     );
+    
+    // Show bookmark confirmation message
+    setBookmarkedPostId(postId);
+    setShowBookmarkConfirmation(true);
+    
+    // Hide confirmation after 2 seconds
+    setTimeout(() => {
+      setShowBookmarkConfirmation(false);
+    }, 2000);
   };
 
   const handleFollow = (postId) => {
@@ -206,6 +221,35 @@ export default function FollowingTabs() {
         )}
       </div> */}
 
+      {/* Bookmark Confirmation Toast - Centered with black background */}
+      {showBookmarkConfirmation && (
+        <div className="bookmark-confirmation-toast" style={{
+          position: 'fixed',
+          bottom: '0',
+          left: '50%',
+          transform: 'translate(-50%, 0)',
+          backgroundColor: '#000000',
+          color: 'white',
+          padding: '15px 25px',
+          borderRadius: '4px',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+          zIndex: 1050,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '10px',
+          minWidth: '250px',
+          textAlign: 'center'
+        }}>
+          <FontAwesomeIcon icon={faCheck} />
+          <span>
+            {posts.find(post => post.id === bookmarkedPostId)?.bookmarked 
+              ? 'Post saved to your bookmarks' 
+              : 'Post removed from your bookmarks'}
+          </span>
+        </div>
+      )}
+
       {/* Tabs */}
       <ul className="nav nav-tabs mb-3 feedTabs">
         <li className="nav-item">
@@ -257,36 +301,38 @@ export default function FollowingTabs() {
               </div>
 
               {post.images && post.images.length > 0 && (
-  <Swiper modules={[Navigation]} navigation className="mySwiper">
-    {post.images.map((image, index) => (
-      <SwiperSlide key={index}>
-        <img
-          src={image}
-          alt={`Post ${index + 1}`}
-          className="w-100"
-          onClick={() => openPostModal(post)}
-          style={{ cursor: 'pointer' }}
-        />
-      </SwiperSlide>
-    ))}
-  </Swiper>
-)}
+                <Swiper modules={[Navigation]} navigation className="mySwiper">
+                  {post.images.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <img
+                        src={image}
+                        alt={`Post ${index + 1}`}
+                        className="w-100"
+                        onClick={() => openPostModal(post)}
+                        style={{ cursor: 'pointer' }}
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              )}
 
-{/* Render Video if Available */}
-{post.video && post.video.length > 0 && (
-  <div modules={[Navigation]} navigation className="mySwiper">
-    {post.video.map((video, index) => (
-      <SwiperSlide key={index}>
-        <video
-          src={video}
-          controls
-          className=" video_cntr w-100"
-        />
-      </SwiperSlide>
-    ))}
-  </div>
-)}
-
+              {/* Render Video if Available */}
+              {post.video && post.video.length > 0 && (
+                <div modules={[Navigation]} navigation className="mySwiper">
+                  {post.video.map((video, index) => (
+                    <SwiperSlide key={index}>
+                      <video
+                        src={video}
+                        muted
+                        controls
+                        autoPlay
+                        loop
+                        className="video_cntr w-100"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </div>
+              )}
 
               {post.text && (
                 <div className="card-body p-3">
@@ -309,6 +355,7 @@ export default function FollowingTabs() {
                   onClick={() => handleBookmark(post.id)}
                 >
                   <FontAwesomeIcon icon={post.bookmarked ? faBookmarkSolid : faBookmark} />
+                 
                 </button>
               </div>
 
@@ -327,24 +374,24 @@ export default function FollowingTabs() {
                     />
                     <div className="comment_inner_box">
                       <div className="comment_reply_box">
-                      <h6 className="mb-0" style={{ fontSize: '0.9rem' }}>
-                        {comment.username}
-                      </h6>
+                        <h6 className="mb-0" style={{ fontSize: '0.9rem' }}>
+                          {comment.username}
+                        </h6>
 
-                      <p className="mb-0" style={{ fontSize: '0.85rem' }}>
-                        {comment.text}
-                      </p>
+                        <p className="mb-0" style={{ fontSize: '0.85rem' }}>
+                          {comment.text}
+                        </p>
                       </div>
 
                       <div className="d-flex align-items-center">
-                      <small className="text-muted">{post.timeAgo}</small>
-                      <button
-                    className="btn btn-link text-primary  comment_reply"
-                    onClick={() => handleCommentSubmit(post.id)}
-                  >
-                    Reply
-                  </button>
-                  </div>
+                        <small className="text-muted">{post.timeAgo}</small>
+                        <button
+                          className="btn btn-link text-primary comment_reply"
+                          onClick={() => handleCommentSubmit(post.id)}
+                        >
+                          Reply
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -397,134 +444,126 @@ export default function FollowingTabs() {
       </div>
 
       {selectedPost && (
-  <div className="post-modal">
-    <div className="modal-content">
+        <div className="post-modal">
+          <div className="modal-content">
+            <button className="close-btn" onClick={closePostModal}>&times;</button>
 
-      <button className="close-btn" onClick={closePostModal}>&times;</button>
+            <div className="modal-body">
+              {/* Image Slider */}
+              <div className="modal_cntr">
+                <Swiper modules={[Navigation]} navigation className="mySwiper">
+                  {selectedPost.images.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <img src={image} alt={`Post ${index + 1}`} className="w-100" />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
 
-      <div className="modal-body">
-        {/* Image Slider */}
-        <div className="modal_cntr">
-        <Swiper modules={[Navigation]} navigation className="mySwiper">
-          {selectedPost.images.map((image, index) => (
-            <SwiperSlide key={index}>
-              <img src={image} alt={`Post ${index + 1}`} className="w-100" />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-      
-        {/* Like, Comment, and Bookmark Buttons */}
-        <div className="right_comment_cntr">
-        <div className="modal-actions">
-            {/* Post Info */}
-        <div className="feed-header d-flex align-items-center w-100">
-        <img
-                  src={selectedPost.profileImage}
-                  alt="Profile"
-                  className="rounded-circle me-2"
-                  style={{ width: '40px', height: '40px', objectFit: 'cover' }}
-                />
-            <div className="w-100">    
-          <h6 className="mb-0">{selectedPost.username}</h6>
-          <small className="text-muted">{selectedPost.timeAgo}</small>
-         </div>
-        
-                <button className="btn text-muted ms-2">
-                  <FontAwesomeIcon icon={faEllipsisH} />
-                </button>
-        </div>
-
-   
-        </div>
-        <div className="comment_box d-flex">
-          <button
-            className={`btn ${selectedPost.liked ? 'text-danger' : 'text-muted'}`}
-            onClick={() => handleLike(selectedPost.id)}
-          >
-            <FontAwesomeIcon icon={selectedPost.liked ? faHeartSolid : faHeart} /> {selectedPost.likes}
-          </button>
-          <button className="btn text-muted me-auto">
-            <FontAwesomeIcon icon={faComment} /> {selectedPost.comments.length}
-          </button>
-          <button
-            className={`btn ${selectedPost.bookmarked ? 'text-primary' : 'text-muted'}`}
-            onClick={() => handleBookmark(selectedPost.id)}
-          >
-            <FontAwesomeIcon icon={selectedPost.bookmarked ? faBookmarkSolid : faBookmark} />
-          </button>
-          </div>
-        {/* Comments Section */}
-        <div className="comments-section">
-          
-          {selectedPost.comments.map((comment, index) => (
-            
-            <div className="comment d-flex align-items-start" key={index}>
-              <img
-                src={comment.profileImage}
-                alt="Profile"
-                className="rounded-circle me-2"
-                style={{ width: '30px', height: '30px', objectFit: 'cover' }}
-              />
-              <div className="comment_inner_box">
-              <div className="comment_reply_box">
-                <h6 className="mb-0">{comment.username}</h6>
-                <p className="mb-0">{comment.text}</p>
-              </div>
-
-              <div className="d-flex align-items-center">
-                      <small className="text-muted">1d</small>
-                      <button
-                    className="btn btn-link text-primary  comment_reply"
-                    onClick={() => handleCommentSubmit(comment.id)}
-                  >
-                    Reply
-                  </button>
+                {/* Like, Comment, and Bookmark Buttons */}
+                <div className="right_comment_cntr">
+                  <div className="modal-actions">
+                    {/* Post Info */}
+                    <div className="feed-header d-flex align-items-center w-100">
+                      <img
+                        src={selectedPost.profileImage}
+                        alt="Profile"
+                        className="rounded-circle me-2"
+                        style={{ width: '40px', height: '40px', objectFit: 'cover' }}
+                      />
+                      <div className="w-100">    
+                        <h6 className="mb-0">{selectedPost.username}</h6>
+                        <small className="text-muted">{selectedPost.timeAgo}</small>
+                      </div>
+                      <button className="btn text-muted ms-2">
+                        <FontAwesomeIcon icon={faEllipsisH} />
+                      </button>
+                    </div>
                   </div>
+                  
+                  <div className="comment_box d-flex">
+                    <button
+                      className={`btn ${selectedPost.liked ? 'text-danger' : 'text-muted'}`}
+                      onClick={() => handleLike(selectedPost.id)}
+                    >
+                      <FontAwesomeIcon icon={selectedPost.liked ? faHeartSolid : faHeart} /> {selectedPost.likes}
+                    </button>
+                    <button className="btn text-muted me-auto">
+                      <FontAwesomeIcon icon={faComment} /> {selectedPost.comments.length}
+                    </button>
+                    <button
+                      className={`btn ${selectedPost.bookmarked ? 'text-primary' : 'text-muted'}`}
+                      onClick={() => handleBookmark(selectedPost.id)}
+                    >
+                      <FontAwesomeIcon icon={selectedPost.bookmarked ? faBookmarkSolid : faBookmark} />
+                      <span className="ms-1 d-none d-sm-inline">
+                        {selectedPost.bookmarked ? 'Saved' : 'Save'}
+                      </span>
+                    </button>
+                  </div>
+                  
+                  {/* Comments Section */}
+                  <div className="comments-section">
+                    {selectedPost.comments.map((comment, index) => (
+                      <div className="comment d-flex align-items-start" key={index}>
+                        <img
+                          src={comment.profileImage}
+                          alt="Profile"
+                          className="rounded-circle me-2"
+                          style={{ width: '30px', height: '30px', objectFit: 'cover' }}
+                        />
+                        <div className="comment_inner_box">
+                          <div className="comment_reply_box">
+                            <h6 className="mb-0">{comment.username}</h6>
+                            <p className="mb-0">{comment.text}</p>
+                          </div>
+
+                          <div className="d-flex align-items-center">
+                            <small className="text-muted">1d</small>
+                            <button
+                              className="btn btn-link text-primary comment_reply"
+                              onClick={() => handleCommentSubmit(comment.id)}
+                            >
+                              Reply
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                
+                    {/* Add Comment */}
+                    <div className="add-comment d-flex align-items-center">
+                      <img
+                        src="./assets/images/post_profile.png"
+                        alt="Profile"
+                        className="rounded-circle me-2"
+                        style={{ width: '30px', height: '30px', objectFit: 'cover' }}
+                      />
+                      <input
+                        type="text"
+                        className="form-control comment_input"
+                        placeholder="Add Comment..."
+                        value={commentInputs[selectedPost.id] || ''}
+                        onChange={(e) =>
+                          handleCommentInputChange(selectedPost.id, e.target.value)
+                        }
+                        onKeyPress={(e) =>
+                          e.key === 'Enter' && handleCommentSubmit(selectedPost.id)
+                        }
+                      />
+                      <button
+                        className="btn btn-link text-primary ms-2"
+                        onClick={() => handleCommentSubmit(selectedPost.id)}
+                      >
+                        Reply
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            
-          ))}
-      
-          {/* Add Comment */}
-          
-          <div className="add-comment d-flex align-items-center">
-            <img
-              src="./assets/images/post_profile.png"
-              alt="Profile"
-              className="rounded-circle me-2"
-              style={{ width: '30px', height: '30px', objectFit: 'cover' }}
-            />
-            <input
-              type="text"
-              className="form-control comment_input"
-              placeholder="Add Comment..."
-              value={commentInputs[selectedPost.id] || ''}
-              onChange={(e) =>
-                handleCommentInputChange(selectedPost.id, e.target.value)
-              }
-              onKeyPress={(e) =>
-                e.key === 'Enter' && handleCommentSubmit(selectedPost.id)
-              }
-            />
-            <button
-              className="btn btn-link text-primary ms-2"
-              onClick={() => handleCommentSubmit(selectedPost.id)}
-            >
-              Reply
-            </button>
-          </div>
-          </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
-  </div>
-)}
-
-
-    </div>
-    
-    
   );
 }

@@ -1,11 +1,27 @@
 "use client";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, faLocation, faSearch } from "@fortawesome/free-solid-svg-icons";
-
+import { faBell } from "@fortawesome/free-solid-svg-icons";
+import Globalsearch from "../utils/globalsearch";
+import { useState, useEffect } from 'react';
+import { usePathname } from "next/navigation";
 export default function Header() {
+  const [isSticky, setIsSticky] = useState(false);
+let pathname=usePathname();
+  // Handle scroll to toggle sticky behavior for the search bar
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const threshold = 10; // Adjust this value based on when you want the search bar to reposition
+      setIsSticky(scrollPosition > threshold);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light sticky-top mb-3">
+    <nav className={`navbar navbar-expand-lg py-4 navbar-light sticky-top mb-3 ${isSticky ? 'navbar--sticky' : ''}`}>
       <div className="container">
         <a className="navbar-brand" href="#">
           <Image
@@ -14,6 +30,7 @@ export default function Header() {
             height={35}
             className="logo"
             alt="Logo"
+            onError={(e) => (e.target.src = 'https://via.placeholder.com/127x35?text=Logo')}
           />
         </a>
 
@@ -61,8 +78,8 @@ export default function Header() {
                 className="rounded-circle"
                 width={36}
                 height={36}
-              />{" "}
-            
+                onError={(e) => (e.target.src = 'https://via.placeholder.com/36x36?text=Profile')}
+              />
             </button>
             <ul
               className="dropdown-menu dropdown-menu-end"
@@ -94,22 +111,13 @@ export default function Header() {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <div className="search-bar mx-auto mt-2 mt-lg-0 mb-2 mb-lg-0">
-          <span className="location_icon"><Image
-            src="/assets/images/location.svg"
-            width={20}
-            height={20}
-            className="location"
-            alt="location"
-          />
-          </span>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Location"
-            />
-          </div>
+          <div className="position-relative w-100">
+          <div className={`search_bar ${isSticky ? 'search_bar--sticky' : ''}`}>
 
+{pathname=="/spirituals"&& <div className="col-md-12 position-relative"><Globalsearch /></div>}
+           
+          </div>
+          </div>
           <ul className="navbar-nav ms-auto d-none d-lg-flex">
             <li className="nav-item">
               <a className="nav-link active" href="#">Home</a>
@@ -118,16 +126,16 @@ export default function Header() {
               <a className="nav-link" href="#">Spiritual</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Listings</a>
+              <a className="nav-link" href="#">Happening</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Jobs</a>
+              <a className="nav-link" href="#">Utsav</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">Events</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Shop</a>
+              <a className="nav-link" href="#">Blogs</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">Register</a>
