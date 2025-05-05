@@ -28,7 +28,10 @@ input::placeholder {
 .form-check label{color: #666;font-weight: 100;}
 body .form-check-input:checked{background-color: #e5484d!important;border-color: #e5484d!important;}
 .active{color: #e5484d;}
+.common-btn{background-color: var(--primary-color)!important;color:#fff!important;}
 .form-check-input:focus{box-shadow: none!important;}
+.bg-dots{background-color: var(--primary-color);}
+.bg_primary{background:#e5484d}
 .business_card_item{box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;}
 .offer_text{background: linear-gradient(266deg, #426DB3, #8FA8D2, #FFFFFF);font-size: 16px;display: block;white-space: nowrap;
   padding: 12px 21px;border-top-right-radius: 5px;display: flex;gap:4px;
@@ -997,7 +1000,7 @@ body .stories-slider .swiper-button-next, body .stories-slider .swiper-button-pr
   .feature_sec .card:hover .img_sec{background-color: #FDBD3A;}
 .featured_font{font-size: 22px;text-transform: uppercase;}
 
-.spiritual_hero_sec{background: linear-gradient(180deg, #FFEBDC, #ffffff00);border-radius: 20px;}
+.spiritual_hero_sec{background: linear-gradient(180deg, #FFEBDC, #ffffff00);}
 .spiritual_hero_sec h1{font-weight: 700;}
 .spiritual_hero_sec .btn_sec{border: 1px solid var(--primary-color);border-radius: 10px;position: relative;overflow: hidden;}
 .main_btn_sec {width: 50%;}
@@ -1131,3 +1134,7 @@ width: 274px;
   
       
       .search_bar--sticky input{padding:16px!important;;}
+body .mandir_card{border-bottom: 1px solid #eee!important;}
+.btn.btn-outline-secondary{background-color: transparent;border-color: var(--primary-color)!important;color:var(--primary-color)!important}
+.btn.btn-outline-secondary i{font-size:20px;}
+.btn.btn-outline-secondary:hover{background-color: var(--primary-color);color:#fff!important}

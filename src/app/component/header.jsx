@@ -21,7 +21,7 @@ let pathname=usePathname();
   }, []);
 
   return (
-    <nav className={`navbar navbar-expand-lg py-4 navbar-light sticky-top mb-3 ${isSticky ? 'navbar--sticky' : ''}`}>
+    <nav className={`navbar navbar-expand-lg py-4 navbar-light sticky-top  ${isSticky ? 'navbar--sticky' : ''}`}>
       <div className="container">
         <a className="navbar-brand" href="#">
           <Image
