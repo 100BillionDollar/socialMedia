@@ -50,18 +50,18 @@ body .carousel-indicators [data-bs-target]{width: 8px;
   height: 8px;background-color: #fff;border-radius: 50%;}
   .carousel-indicators .active{background-color:#fff}
   span{position: relative;}
-  .breadcrumb-item{position: relative;}
-  .breadcrumb-item a{color: #000;}
-  .breadcrumb-item + .breadcrumb-item::before{         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='8.771' viewBox='0 0 5 8.771'%3E%3Cpath data-name='Path 2010' d='m101.959 4.82-3.772 3.771a.614.614 0 1 1-.869-.869l3.337-3.337-3.337-3.337a.614.614 0 0 1 .869-.868l3.772 3.771a.614.614 0 0 1 0 .868z' transform='translate(-97.139)' style='fill:%23434d59'/%3E%3C/svg%3E");
+  .breadcrumb-item{position: relative;padding-left: 8px;}
+  .breadcrumb-item a{color: #000;text-decoration: none;}
+  .breadcrumb-item + .breadcrumb-item::before{         background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='8.771' viewBox='0 0 5 8.771'%3E%3Cpath data-name='Path 2010' d='m101.959 4.82-3.772 3.771a.614.614 0 1 1-.869-.869l3.337-3.337-3.337-3.337a.614.614 0 0 1 .869-.868l3.772 3.771a.614.614 0 0 1 0 .868z' transform='translate(-97.139)' style='fill:%23434d59'/%3E%3C/svg%3E") no-repeat center!important;
 
  background-repeat: no-repeat;
 background-position: center;
-content: '';
+content: ''!important;
 display: block;
 width: 12px;
 height: 12px;
 position: absolute;
-left: -2px;
+left: -4px;
 top: 42%;
 transform: translate(-50%, -50%);
 
@@ -695,7 +695,7 @@ body .swiper-button-next,body .swiper-button-prev {
   color: #426db3!important;
 }
 button{text-decoration: none!important;}
-button:focus, .btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show{outline:none; border: none;}
+button:focus, .btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show{outline:none;}
 .primary_btn:hover{  background: #426db3;
 }
 body .swiper-button-next, body .swiper-button-prev{background: #fff; opacity: 1!important;}
@@ -1138,3 +1138,54 @@ body .mandir_card{border-bottom: 1px solid #eee!important;}
 .btn.btn-outline-secondary{background-color: transparent;border-color: var(--primary-color)!important;color:var(--primary-color)!important}
 .btn.btn-outline-secondary i{font-size:20px;}
 .btn.btn-outline-secondary:hover{background-color: var(--primary-color);color:#fff!important}
+
+.image_counter{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: #0000006b;
+  height: 100%;
+  width: 100%;
+  display: flex
+;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.detail_page_styling .nav {border-bottom: 1px solid #eee;}
+.detail_page_styling  a.nav-link.active{    background-color: transparent;
+  border: none;
+  border-bottom: 4px solid var(--primary-color);
+  color: var(--primary-color);}
+  .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{border:none;color:#000 }
+.about_content_container .content{border-bottom:2px solid #eee}
+.social_icon span{display: block;}
+  .social_icon span {
+  display: flex;
+  height: 28px;
+  width: 28px;
+  line-height: 1px;
+  align-items: center;
+  justify-content: center;
+  }
+  .social_icon span i{font-size: 16px;}
+  .map_btn button{background-color: transparent;}
+  .direction_card_container{border: 1px solid #eee;
+  padding: 15px 13px;
+  top:100px;
+  border-radius: 10px;}
+  .direction_card_container img{border-radius: 5px;}
+  .sticky_card{top:100px}
+  .breadcrumb-item{padding: 0 16px;}
+  .breadcrumb-item:nth-child(1) {padding-left: 0;}
+  .img_mb{    margin-bottom: 10px;}
+  .btn_icon{display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1px;
+  border-radius: 0;
+  font-size: 23px;}
+  .nav-link:focus-visible{box-shadow: none;}
+  .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{border: none;}
