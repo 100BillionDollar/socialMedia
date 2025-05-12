@@ -66,6 +66,7 @@ top: 42%;
 transform: translate(-50%, -50%);
 
 }
+.btn-primary{background-color: var(--primary-color)!important;border: none;}
 .breadcrumb-item.active span{color: #e74c3c;}
   /* span.text-white.bg-success.px-3.py-1:after {
     content: '';
@@ -1190,3 +1191,42 @@ body .mandir_card{border-bottom: 1px solid #eee!important;}
   .nav-link:focus-visible{box-shadow: none;}
   .nav-tabs .nav-link{border:none}
   .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{border: none;margin:0;border:none}
+
+  .blog_banner{background:url("/assets/images/blog_banner.jpg") center ; border-radius: 15px;padding: 80px 0;}
+  .cat_item .caption{       background-color: #fff !important;
+    bottom: 8px;
+    border-radius: 4px;
+    left: 10px;
+    width: 90%;
+    padding: 2px 8px;
+    font-size: 15px;
+    backdrop-filter: blur(9px);}
+    /* .latest_aticles */
+    .latest_aticles .card{border:none;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
+      .pills-container{    color: var(--primary-color);
+    background-color: #e5484d78;
+    display: inline-block;
+    margin-bottom:10px;
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+    .latest_aticles .card .card-footer{color:var(--primary-color)}
+    .blog_search_container{       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: absolute;
+    width: 55%;
+    display: flex
+;
+    left: 50%;
+    gap: 10px;
+    bottom: -28px;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 22px 20px;
+    border-radius: 14px;
+    justify-content: start;
+    
+}
+
+     .blog_search_container img{height: 25px;width:25px;}
+    .blog_search_container input{border: none;flex:1;outline: none;}
+    .pagination a{text-decoration: none;color:#000;border:none;background-color: transparent;}
