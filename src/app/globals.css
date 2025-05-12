@@ -1188,4 +1188,5 @@ body .mandir_card{border-bottom: 1px solid #eee!important;}
   border-radius: 0;
   font-size: 23px;}
   .nav-link:focus-visible{box-shadow: none;}
-  .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{border: none;}
+  .nav-tabs .nav-link{border:none}
+  .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{border: none;margin:0;border:none}

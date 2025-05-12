@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Make sure to import Bootstrap
+import LiveDarshanCarousel from './livedarshan';
 
 export default function PremMandir() {
   const [isCopied, setIsCopied] = useState(false);
@@ -161,56 +162,57 @@ export default function PremMandir() {
       
       case 'darshan':
         return (
-          <div className="darshan-container">
-            <h5 className="mb-4 fw-medium">Darshan & Pooja Information</h5>
+          // <div className="darshan-container">
+          //   <h5 className="mb-4 fw-medium">Darshan & Pooja Information</h5>
             
-            <div className="card mb-4">
-              <div className="card-body">
-                <h6 className="card-title">Special Darshan</h6>
-                <p className="card-text small mb-3">VIP darshan tickets are available at the temple counter with the following rates:</p>
-                <ul className="list-group list-group-flush small">
-                  <li className="list-group-item d-flex justify-content-between align-items-center">
-                    <span>Individual Ticket</span>
-                    <span>₹500 per person</span>
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between align-items-center">
-                    <span>Family Ticket (up to 4 members)</span>
-                    <span>₹1,500</span>
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between align-items-center">
-                    <span>Group Ticket (5-10 members)</span>
-                    <span>₹3,000</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          //   <div className="card mb-4">
+          //     <div className="card-body">
+          //       <h6 className="card-title">Special Darshan</h6>
+          //       <p className="card-text small mb-3">VIP darshan tickets are available at the temple counter with the following rates:</p>
+          //       <ul className="list-group list-group-flush small">
+          //         <li className="list-group-item d-flex justify-content-between align-items-center">
+          //           <span>Individual Ticket</span>
+          //           <span>₹500 per person</span>
+          //         </li>
+          //         <li className="list-group-item d-flex justify-content-between align-items-center">
+          //           <span>Family Ticket (up to 4 members)</span>
+          //           <span>₹1,500</span>
+          //         </li>
+          //         <li className="list-group-item d-flex justify-content-between align-items-center">
+          //           <span>Group Ticket (5-10 members)</span>
+          //           <span>₹3,000</span>
+          //         </li>
+          //       </ul>
+          //     </div>
+          //   </div>
             
-            <div className="card mb-4">
-              <div className="card-body">
-                <h6 className="card-title">Special Pooja Services</h6>
-                <p className="card-text small mb-3">Book special pooja services in advance:</p>
-                <ul className="list-group list-group-flush small">
-                  <li className="list-group-item d-flex justify-content-between align-items-center">
-                    <span>Abhishekam</span>
-                    <span>₹2,100</span>
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between align-items-center">
-                    <span>Sahasranama Archana</span>
-                    <span>₹1,100</span>
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between align-items-center">
-                    <span>Annadanam (Food donation for 100 people)</span>
-                    <span>₹11,000</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          //   <div className="card mb-4">
+          //     <div className="card-body">
+          //       <h6 className="card-title">Special Pooja Services</h6>
+          //       <p className="card-text small mb-3">Book special pooja services in advance:</p>
+          //       <ul className="list-group list-group-flush small">
+          //         <li className="list-group-item d-flex justify-content-between align-items-center">
+          //           <span>Abhishekam</span>
+          //           <span>₹2,100</span>
+          //         </li>
+          //         <li className="list-group-item d-flex justify-content-between align-items-center">
+          //           <span>Sahasranama Archana</span>
+          //           <span>₹1,100</span>
+          //         </li>
+          //         <li className="list-group-item d-flex justify-content-between align-items-center">
+          //           <span>Annadanam (Food donation for 100 people)</span>
+          //           <span>₹11,000</span>
+          //         </li>
+          //       </ul>
+          //     </div>
+          //   </div>
             
-            <div className="alert alert-info small" role="alert">
-              <i className="bi bi-info-circle me-2"></i>
-              For special pooja bookings, please contact the temple office at least 3 days in advance at 9846876654.
-            </div>
-          </div>
+          //   <div className="alert alert-info small" role="alert">
+          //     <i className="bi bi-info-circle me-2"></i>
+          //     For special pooja bookings, please contact the temple office at least 3 days in advance at 9846876654.
+          //   </div>
+          // </div>
+          <LiveDarshanCarousel/>
         );
       
       case 'posts':
